@@ -19,15 +19,12 @@ var Race = {
     }
   },
   go: function(duration) {
-    while(duration>=0) {
-      console.log(duration);
-      window.setTimeout(function(duration){
-        this.step();
-        draw(canvas,ctx);
-        duration--;
-        this.go(duration);
-      },10);
-    }
+    var interval = window.setInterval(function(){
+      if(duration<=0) clearInterval(interval);
+      duration--;
+      Race.step();
+      draw(canvas,ctx);
+    },10);
   }
 }
 
@@ -41,10 +38,7 @@ r.onreadystatechange = function(data){
   console.log('ready');
   draw(canvas,ctx);
   
-  window.setInterval(function(){
-    Race.step();
-    draw(canvas,ctx);
-  },10);
+  Race.go(2503);
 }
 
 r.open("GET", "data.json", true);
