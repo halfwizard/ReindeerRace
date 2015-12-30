@@ -33,3 +33,7 @@ Reindeer.prototype.step = function() {
   }
   return this.distance;
 }
+
+Reindeer.prototype.percentRecovered = function() {
+  return this.restTime/this.recoveryTime;
+}

@@ -8,6 +8,7 @@
     body {
       color: #eee;
       background: #006;
+      font-family: sans-serif;
     }
     canvas {
       border: 1px solid #eee;
@@ -16,11 +17,20 @@
     #stats {
       font-size: .7em;
     }
+    .stat {
+      width: 100px;
+      height: 10px;
+      background: #660;
+    }
+    .val {
+      height: 10px;
+      background: #ff0;
+    }
   </style>
 </head>
 <body>
   <h1>Race</h1>
-  <canvas id="race" width="1500" height="150">
+  <canvas id="race" width="600" height="150">
     <div id="raceFallback"></div>
   </canvas>
   <div id="stats"></div>
